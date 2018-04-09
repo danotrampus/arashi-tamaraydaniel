@@ -12,7 +12,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "pre-deploy": "yarn run build",
-    "deploy": "yarn run pre-deploy && sudo heroku container:push web"
+    "deploy": "yarn run pre-deploy && heroku container:push web"
   },
   "private": true,
   "dependencies": {
