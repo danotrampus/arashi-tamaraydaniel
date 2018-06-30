@@ -1,12 +1,13 @@
 {
-  "name": "arashi-tamaraydaniel",
+  "name": "arashi-danielytamara",
   "version": "0.0.0",
+  "license": "MIT",
   "main": "app/server.js",
   "scripts": {
     "ng": "ng",
-    "start": "yarn run build && node ./app/server.js",
+    "start": "npm run build && node ./app/server.js",
     "start-test": "ng serve --host=0.0.0.0",
-    "build": "ng build --prod && rm -fR ./app/public && rm -fR ./../heroku/arashi-tamaraydaniel/public && cp -R ./dist ./app/public && cp -R ./dist ./../heroku/arashi-tamaraydaniel/public",
+    "build": "ng build --prod && rm -fR ./app/public && cp -R ./dist ./app/public",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
