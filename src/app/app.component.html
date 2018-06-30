@@ -1,20 +1,296 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<app-menu [homeOption]="{text: 'Tamara y Daniel', link:'#video-background'}" [menuOptions]="[
+  {text: 'Novia', link:'#bride'},
+  {text: 'Novio', link:'#groom'},
+  {text: 'Cuando', link:'#countdown'},
+  {text: 'Donde', link:'#location'}
+]"></app-menu>
+<app-video-background [youtubeVideoId]="'l8DMfBr_DMI'"></app-video-background>
+<app-invited [contactId]="'form1-j'"></app-invited>
+<app-bride>
+  <bride-img>
+    <img src="assets/images/bride.jpg" alt="bride" title="bride">
+  </bride-img>
+  <bride-title>Acerca de la novia</bride-title>
+  <bride-description>
+    La persona más buena, sensible y tímida que puedas conocer. Se esmera y piensa mucho por los demás. Le dicen "chungui" pero
+    es mejor conocida por ser denominada "culo inquieto" ya que no para un segundo y hace mil cosas a la vez. Le encanta
+    diseñar todo tipo de cosas y es muy creativa. Ama bailar todo el día y es lo que la hace más feliz, aunque no necesita
+    nada para serlo ya que siempre se levanta con una sonrisa. Es el alma de todos los grupos y siempre organiza las mejores
+    salidas! Muy aventurera, le encanta viajar y no puede esperar para conocer todo el mundo! (aunque en realidad solo quiere
+    conocer todos los disneys del mundo). Como si fuera poco, con el poco tiempo que le queda, se encarga de dar vida a los
+    mejores sistemas que en su trabajo todos quieren usar, es toda una INGENIERA. Es una niña o adulta, tierna o brava, vive
+    a pleno o descansa, pelea por lo suyo o lo regala todo, es una montaña rusa de experiencias con las que nunca te podrías
+    aburrir a su lado.
+  </bride-description>
+</app-bride>
+<app-groom>
+  <groom-img>
+    <img src="assets/images/groom.jpg" alt="groom" title="groom">
+  </groom-img>
+  <groom-title>Acerca del novio</groom-title>
+  <groom-description>Necesita sus 12 horas de sueño porque sino va a estar todo el dia chinchudo. La mañana no es lo suyo. Sin embargo ha encontrado
+    su vocación, en la que si funciona sin importar los horarios porque es su pasión y lo hace feliz. Fanático de las computadoras,
+    los celulares y todo lo que se enchufe a 220 o vuele. Super nerd. Inteligente. Curioso. Arregla tuti... en fin, INGENIERO.
+    Vive colgado de una palmera a tal punto que una vez se olvidó de ir a buscar a la novia. Igualmente ella lo perdonó.
+    Tiene un corazón enorme y es capaz de darlo todo sin pedir nada a cambio. Le encanta comer pero no sabe hacer ni una
+    salchicha. Le pone mucha expectativa a la novia.
+  </groom-description>
+</app-groom>
+<app-countdown [dueDate]="'2018-10-26 00:00'" [timezone]="'America/Argentina/Buenos_Aires'"></app-countdown>
+<app-location>
+  <location-title>Darwin Espacio I</location-title>
+  <location-description>
+    El Hipódromo de San Isidro del Jockey Club es uno de los sitios más simbólicos de Buenos Aires. Inmerso dentro de un ambiente
+    selecto y tradicional, allí sobrevive una gran parte de la historia del país.
+    <br/> Los salones de Darwin Multiespacio ubicados, dentro del Hipódromo, frente a las pistas de carrera son arquitectónicamente
+    amplios y modernos, detalles que combinados con los grandes espacios cubiertos de flores y árboles que los rodean hacen
+    del lugar un sitio mágico.
+  </location-description>
+  <location-image>
+    <img src="assets/images/salon.jpg" alt="salon" title="salon">
+  </location-image>
+</app-location>
+<app-map>
+  <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJP0t0RcGtXF2uHDwZFUBlb_s2gOPPF2A&q=v+Bernabe+Marquez+702+San+Isidro+Argentina" allowfullscreen=""></iframe>
+</app-map>
+<app-banner [bannerId]="1"></app-banner>
+<app-copyright></app-copyright>
 
+<!-- 
+<section class="timeline1 cid-qwTIrrJuXL" id="timeline1-a" data-rv-view="1139">
+  <div class="container align-center">
+    <h2 class="mbr-section-title pb-3 mbr-fonts-style display-1">
+      Our story</h2>
+    <h3 class="mbr-section-subtitle pb-5 mbr-fonts-style display-2">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </h3>
+
+    <div class="container timelines-container" mbri-timelines="">
+      <div class="row timeline-element reverse separline">
+        <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
+          <div class="time-line-date-content">
+            <p class="mbr-timeline-date mbr-fonts-style display-5">
+              1 january 2018
+            </p>
+          </div>
+        </div>
+        <span class="iconBackground"></span>
+        <div class="col-xs-12 col-md-6 align-right">
+          <div class="timeline-text-content">
+            <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">First meet</h4>
+            <p class="mbr-timeline-text mbr-fonts-style display-7">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat libero, bibendum in libero tempor, luctus volutpat ligula.
+              Integer fringilla porttitor pretium. Nam erat felis, iaculis id justo ut, ullamcorper feugiat elit. Proin vel
+              lectus auctor, porttitor ligula vitae, convallis leo. In eget massa elit.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row timeline-element  separline">
+        <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
+          <div class="time-line-date-content">
+            <p class="mbr-timeline-date mbr-fonts-style display-5">
+              2 february 2019
+            </p>
+          </div>
+        </div>
+        <span class="iconBackground"></span>
+        <div class="col-xs-12 col-md-6 align-left ">
+          <div class="timeline-text-content">
+            <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">First date</h4>
+            <p class="mbr-timeline-text mbr-fonts-style display-7">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat libero, bibendum in libero tempor, luctus volutpat ligula.
+              Integer fringilla porttitor pretium. Nam erat felis, iaculis id justo ut, ullamcorper feugiat elit. Proin vel
+              lectus auctor, porttitor ligula vitae, convallis leo. In eget massa elit.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row timeline-element reverse separline">
+        <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
+          <div class="time-line-date-content">
+            <p class="mbr-timeline-date mbr-fonts-style display-5">
+              3 march 2020
+            </p>
+          </div>
+        </div>
+        <span class="iconBackground"></span>
+        <div class="col-xs-12 col-md-6 align-right">
+          <div class="timeline-text-content">
+            <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
+              Proposal</h4>
+            <p class="mbr-timeline-text mbr-fonts-style display-7">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat libero, bibendum in libero tempor, luctus volutpat ligula.
+              Integer fringilla porttitor pretium. Nam erat felis, iaculis id justo ut, ullamcorper feugiat elit. Proin vel
+              lectus auctor, porttitor ligula vitae, convallis leo. In eget massa elit.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row timeline-element ">
+        <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
+          <div class="time-line-date-content">
+            <p class="mbr-timeline-date mbr-fonts-style display-5">
+              4 april 2021
+            </p>
+          </div>
+        </div>
+        <span class="iconBackground"></span>
+        <div class="col-xs-12 col-md-6 align-left ">
+          <div class="timeline-text-content">
+            <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
+              Engagement</h4>
+            <p class="mbr-timeline-text mbr-fonts-style display-7">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat libero, bibendum in libero tempor, luctus volutpat ligula.
+              Integer fringilla porttitor pretium. Nam erat felis, iaculis id justo ut, ullamcorper feugiat elit. Proin vel
+              lectus auctor, porttitor ligula vitae, convallis leo. In eget massa elit.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="header1 cid-qwU0Se3wgU mbr-parallax-background" id="header1-c" data-rv-view="1142">
+  <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(70, 80, 82);">
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="mbr-white col-md-10">
+        <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
+          Now we're going to celebrate our wedding!</h1>
+        <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-7">Free Bootstrap Wedding Template</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="clients cid-qwU6wRFbjk" id="clients-i" data-rv-view="1155">
+  <div class="container mb-5">
+    <div class="media-container-row">
+      <div class="col-12 align-center">
+        <h2 class="mbr-section-title pb-3 mbr-fonts-style display-1">Gift Registration</h2>
+        <h3 class="mbr-section-subtitle mbr-light mbr-fonts-style display-7">Quisque mollis rhoncus justo ut tincidunt.&nbsp;</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="carousel slide" data-ride="carousel" role="listbox">
+      <div class="carousel-inner" data-visible="5">
+        <div class="carousel-item ">
+          <div class="media-container-row">
+            <div class="col-md-12">
+              <div class="wrap-img ">
+                <img src="assets/images/1.png" class="img-responsive clients-img" media-simple="true">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <div class="media-container-row">
+            <div class="col-md-12">
+              <div class="wrap-img ">
+                <img src="assets/images/2.png" class="img-responsive clients-img" media-simple="true">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <div class="media-container-row">
+            <div class="col-md-12">
+              <div class="wrap-img ">
+                <img src="assets/images/3.png" class="img-responsive clients-img" media-simple="true">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <div class="media-container-row">
+            <div class="col-md-12">
+              <div class="wrap-img ">
+                <img src="assets/images/4.png" class="img-responsive clients-img" media-simple="true">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <div class="media-container-row">
+            <div class="col-md-12">
+              <div class="wrap-img ">
+                <img src="assets/images/5.png" class="img-responsive clients-img" media-simple="true">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-controls">
+        <a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev">
+          <span aria-hidden="true" class="mbri-left mbr-iconfont"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a data-app-prevent-settings="" class="carousel-control carousel-control-next" role="button" data-slide="next">
+          <span aria-hidden="true" class="mbri-right mbr-iconfont"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mbr-section form1 cid-qwU8is89Fl" id="form1-j" data-rv-view="1169">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="title col-12 col-lg-8">
+        <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">
+          Contact us!</h2>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="media-container-column col-lg-8" data-form-type="formoid">
+        <div data-form-alert="" hidden="">
+          Thanks for filling out the form!
+        </div>
+        <form class="mbr-form" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form">
+          <input type="hidden" data-form-email="true" value="Ib39DSjXc4/O2CZUXc4wpe3gVuGLgMbUFdEjEOc7vQi2RaFzRJsYkV93xAyLx3SHFCjZIixGMfT9Xn57Oq+TfLwEfkyjgiMnBGR3+tsMpawj6+TWMASOlg3KsN2zdIkX">
+          <div class="row row-sm-offset">
+            <div class="col-md-4 multi-horizontal" data-for="name">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7" for="name-form1-j">Name</label>
+                <input type="text" class="form-control" name="name" data-form-field="Name" required="" id="name-form1-j">
+              </div>
+            </div>
+            <div class="col-md-4 multi-horizontal" data-for="email">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7" for="email-form1-j">Email</label>
+                <input type="email" class="form-control" name="email" data-form-field="Email" required="" id="email-form1-j">
+              </div>
+            </div>
+            <div class="col-md-4 multi-horizontal" data-for="phone">
+              <div class="form-group">
+                <label class="form-control-label mbr-fonts-style display-7" for="phone-form1-j">Phone</label>
+                <input type="tel" class="form-control" name="phone" data-form-field="Phone" id="phone-form1-j">
+              </div>
+            </div>
+          </div>
+          <div class="form-group" data-for="message">
+            <label class="form-control-label mbr-fonts-style display-7" for="message-form1-j">Message</label>
+            <textarea type="text" class="form-control" name="message" rows="7" data-form-field="Message" id="message-form1-j"></textarea>
+          </div>
+
+          <span class="input-group-btn">
+            <button href="" type="submit" class="btn btn-form btn-black-outline display-4">SEND FORM</button>
+          </span>
+        </form>
+      </div>
+    </div>
+  </div>
+</section> -->
