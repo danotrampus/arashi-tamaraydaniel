@@ -1,0 +1,26 @@
+<section class="header1 cid-qwTXGaUGDn" id="gift" data-rv-view="1130">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="mbr-white col-md-10">
+                <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
+                    <ng-content select="gift-title"></ng-content>
+                </h1>
+                <p class="mbr-text align-center pb-3 mbr-fonts-style display-7">
+                    <ng-content select="gift-description"></ng-content>
+                </p>
+                <p *ngIf="showInfo" class="mbr-text align-center pb-3 mbr-fonts-style display-7">
+                    <ng-content select="gift-description-hidden"></ng-content>
+                </p>
+                <div class="mbr-section-btn align-center">
+
+                    <button *ngIf="!showInfo" class="btn btn-md btn-black-outline display-4" (click)="showInfo = true">
+                        <ng-content select="gift-button-show"></ng-content>
+                    </button>
+                    <button *ngIf="showInfo" class="btn btn-md btn-black-outline display-4" (click)="showInfo = false">
+                        <ng-content select="gift-button-hide"></ng-content>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -14,10 +14,10 @@ export class VideoBackgroundComponent implements OnInit, AfterViewInit {
 
   constructor(private domSanitizer: DomSanitizer) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
   }
 
-  ngAfterViewInit(): void {
+  ngAfterViewInit() {
     this.initVideo();
   }
 
@@ -27,11 +27,13 @@ export class VideoBackgroundComponent implements OnInit, AfterViewInit {
 
   initVideo() {
     (<any>window).onYouTubeIframeAPIReady = () => {
+      console.log('Youtube ready');
       this.player = new (<any>window).YT.Player('tv', {
         height: '100%',
         width: '100%',
         events: {
           'onReady': () => {
+            console.log('Youtube ok');
             this.player.loadVideoById({ 'videoId': this.youtubeVideoId });
             this.player.mute();
           },
@@ -61,9 +63,9 @@ export class VideoBackgroundComponent implements OnInit, AfterViewInit {
     };
 
     const tag = document.createElement('script');
+    tag.type = 'text/javascript';
     tag.src = 'https://www.youtube.com/iframe_api';
-    const firstScriptTag = document.getElementsByTagName('script')[0];
-    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    document.body.appendChild(tag);
 
     const videoBackground = $('#video-background');
     // tslint:disable-next-line:max-line-length

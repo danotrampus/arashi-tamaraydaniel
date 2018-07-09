@@ -1,28 +1,14 @@
 <app-menu [homeOption]="{text: 'Tamara y Daniel', link:'#video-background'}" [menuOptions]="[
+  {text: 'Novio', link:'#groom'},  
   {text: 'Novia', link:'#bride'},
-  {text: 'Novio', link:'#groom'},
+  {text: 'Fotos', link:'#slide'},
+  {text: 'Historia', link:'#story'},
   {text: 'Cuando', link:'#countdown'},
-  {text: 'Donde', link:'#location'}
+  {text: 'Donde', link:'#location'},
+  {text: 'Regalo', link:'#gift'}
 ]"></app-menu>
 <app-video-background [youtubeVideoId]="'l8DMfBr_DMI'"></app-video-background>
 <app-invited [contactId]="'form1-j'"></app-invited>
-<app-bride>
-  <bride-img>
-    <img src="assets/images/bride.jpg" alt="bride" title="bride">
-  </bride-img>
-  <bride-title>Acerca de la novia</bride-title>
-  <bride-description>
-    La persona más buena, sensible y tímida que puedas conocer. Se esmera y piensa mucho por los demás. Le dicen "chungui" pero
-    es mejor conocida por ser denominada "culo inquieto" ya que no para un segundo y hace mil cosas a la vez. Le encanta
-    diseñar todo tipo de cosas y es muy creativa. Ama bailar todo el día y es lo que la hace más feliz, aunque no necesita
-    nada para serlo ya que siempre se levanta con una sonrisa. Es el alma de todos los grupos y siempre organiza las mejores
-    salidas! Muy aventurera, le encanta viajar y no puede esperar para conocer todo el mundo! (aunque en realidad solo quiere
-    conocer todos los disneys del mundo). Como si fuera poco, con el poco tiempo que le queda, se encarga de dar vida a los
-    mejores sistemas que en su trabajo todos quieren usar, es toda una INGENIERA. Es una niña o adulta, tierna o brava, vive
-    a pleno o descansa, pelea por lo suyo o lo regala todo, es una montaña rusa de experiencias con las que nunca te podrías
-    aburrir a su lado.
-  </bride-description>
-</app-bride>
 <app-groom>
   <groom-img>
     <img src="assets/images/groom.jpg" alt="groom" title="groom">
@@ -31,14 +17,57 @@
   <groom-description>Necesita sus 12 horas de sueño porque sino va a estar todo el dia chinchudo. La mañana no es lo suyo. Sin embargo ha encontrado
     su vocación, en la que si funciona sin importar los horarios porque es su pasión y lo hace feliz. Fanático de las computadoras,
     los celulares y todo lo que se enchufe a 220 o vuele. Super nerd. Inteligente. Curioso. Arregla tuti... en fin, INGENIERO.
-    Vive colgado de una palmera a tal punto que una vez se olvidó de ir a buscar a la novia. Igualmente ella lo perdonó.
-    Tiene un corazón enorme y es capaz de darlo todo sin pedir nada a cambio. Le encanta comer pero no sabe hacer ni una
-    salchicha. Le pone mucha expectativa a la novia.
+    Vive colgado de una palmera a tal punto que una vez se olvidó de ir a buscar a la novia. Igualmente ella lo perdonó y
+    se ahora casan. Tiene un corazón enorme y es capaz de darlo todo sin pedir nada a cambio. Le encanta comer pero no sabe
+    hacer ni una salchicha (le pone mucha expectativa a la novia en ese tema). Es un gran amigo y un gran compañero. Con
+    él, a todos lados, SIEMPRE.
   </groom-description>
 </app-groom>
+<app-bride>
+  <bride-img>
+    <img src="assets/images/bride.jpg" alt="bride" title="bride">
+  </bride-img>
+  <bride-title>Acerca de la novia</bride-title>
+  <bride-description>
+    La persona más buena, sensible y tímida que puedas conocer. Se esmera y piensa mucho en los demás. Le dicen "chungui" pero
+    es mejor conocida como "culo inquieto" ya que no para un segundo y hace mil cosas a la vez. Le encanta diseñar todo tipo
+    de cosas y es muy creativa. Ama bailar todo el día y es lo que la hace más feliz, aunque no necesita nada para serlo
+    ya que siempre se levanta con una sonrisa. Es el alma de todos los grupos y siempre organiza las mejores salidas! Muy
+    aventurera, le encanta viajar y no puede esperar para conocer todo el mundo! (aunque en realidad solo quiere conocer
+    todos los Disney del mundo). Como si fuera poco, con el poco tiempo que le queda, se encarga de dar vida a los mejores
+    sistemas que en su trabajo todos quieren usar, es toda una INGENIERA. Es niña y adulta a la vez, tierna, brava, vive
+    a pleno y cree que descansar es perder tiempo, pelea por lo suyo y lo regala todo desinteresadamente, es una montaña
+    rusa de experiencias con las que nunca te podrías aburrir.
+  </bride-description>
+</app-bride>
+<app-slide></app-slide>
+<app-story [events]="[
+  { date: '2009', css: 'reverse separline', description: { title: 'Nos conocimos en la facultad', body: '<i class=\'flaticon-006-wedding-contract\'></i>'} },
+  { date: '3 de Diciembre 2009', css: 'reverse separline', description: { title: 'Nos pusimos de novios', body: '(Sin saber en que nos metiamos) <br/><i class=\'flaticon-030-relationship\'></i>'} },
+  { date: '21 de Diciembre 2015', css: 'separline', description: { title: 'Nos recibimos', body: 'Siempre juntos y esta no fue la excepción. <br/><i class=\'flaticon-015-wedding-1\'></i>'} },
+  { date: '6 de Diciembre 2017', css: 'reverse separline', description: { title: 'Propuesta <i class=\'flaticon-016-proposal-1\'></i>', body: 'Después de años compartidos en los que hemos sido muy felices hemos decidido que nos casamos!!! <br/><i class=\'flaticon-050-wedding-ring\'></i>'} },
+  { date: '26 de Octubre 2018', css: 'separline', description: { title: 'Nos casamos y festejamos', body: 'Nos casamos en la parroquia San Roque <br><i class=\'flaticon-041-church\'></i><br> y lo festejamos en Darwin San Isidro.<br/><i class=\'flaticon-026-champagne\'></i>'} }
+]">
+</app-story>
 <app-countdown [dueDate]="'2018-10-26 00:00'" [timezone]="'America/Argentina/Buenos_Aires'"></app-countdown>
 <app-location>
-  <location-title>Darwin Espacio I</location-title>
+  <location-title>Iglesia</location-title>
+  <location-subtitle>Parroquia San Roque</location-subtitle>
+  <location-description>
+    La ceremonia se celebrará a las 21:00hs del día Viernes 26 de Octubre. La iglesia se encuentra ubicada en ubicada en Plaza
+    1160, Villa Ortuzar.
+  </location-description>
+  <location-image>
+    <img src="assets/images/church.jpg" alt="iglesia" title="iglesia">
+  </location-image>
+</app-location>
+<app-map>
+  <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJP0t0RcGtXF2uHDwZFUBlb_s2gOPPF2A&q=place_id:ChIJZ_L9lHS2vJURA7eNMbbyo9M"
+    allowfullscreen=""></iframe>
+</app-map>
+<app-location>
+  <location-title>Salón</location-title>
+  <location-subtitle>Darwin Espacio I</location-subtitle>
   <location-description>
     El Hipódromo de San Isidro del Jockey Club es uno de los sitios más simbólicos de Buenos Aires. Inmerso dentro de un ambiente
     selecto y tradicional, allí sobrevive una gran parte de la historia del país.
@@ -51,111 +80,27 @@
   </location-image>
 </app-location>
 <app-map>
-  <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJP0t0RcGtXF2uHDwZFUBlb_s2gOPPF2A&q=v+Bernabe+Marquez+702+San+Isidro+Argentina" allowfullscreen=""></iframe>
+  <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJP0t0RcGtXF2uHDwZFUBlb_s2gOPPF2A&q=v+Bernabe+Marquez+702+San+Isidro+Argentina"
+    allowfullscreen=""></iframe>
 </app-map>
+<app-gift>
+  <gift-title>¿Querés hacernos un regalo?</gift-title>
+  <gift-description>
+    Tu presencia es sin duda nuestro mayor regalo. Pero si queres obsequiarnos algo puedes ayudarnos con nuestro luna de miel.</gift-description>
+  <gift-description-hidden>
+    Cuenta Nº: 101012093123811023109238 - Banco Ciudad
+    <br/> CBU Nº: 147141094194938409238439843
+    <br/> Alias: JMP13123123
+    <br/> CUIT: 20-35322456-6
+    <br/> Titular: Daniel Trampus
+  </gift-description-hidden>
+  <gift-button-show>Ver datos bancarios</gift-button-show>
+  <gift-button-hide>Ocultar datos bancarios</gift-button-hide>
+</app-gift>
 <app-banner [bannerId]="1"></app-banner>
 <app-copyright></app-copyright>
 
 <!-- 
-<section class="timeline1 cid-qwTIrrJuXL" id="timeline1-a" data-rv-view="1139">
-  <div class="container align-center">
-    <h2 class="mbr-section-title pb-3 mbr-fonts-style display-1">
-      Our story</h2>
-    <h3 class="mbr-section-subtitle pb-5 mbr-fonts-style display-2">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit
-    </h3>
-
-    <div class="container timelines-container" mbri-timelines="">
-      <div class="row timeline-element reverse separline">
-        <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
-          <div class="time-line-date-content">
-            <p class="mbr-timeline-date mbr-fonts-style display-5">
-              1 january 2018
-            </p>
-          </div>
-        </div>
-        <span class="iconBackground"></span>
-        <div class="col-xs-12 col-md-6 align-right">
-          <div class="timeline-text-content">
-            <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">First meet</h4>
-            <p class="mbr-timeline-text mbr-fonts-style display-7">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat libero, bibendum in libero tempor, luctus volutpat ligula.
-              Integer fringilla porttitor pretium. Nam erat felis, iaculis id justo ut, ullamcorper feugiat elit. Proin vel
-              lectus auctor, porttitor ligula vitae, convallis leo. In eget massa elit.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row timeline-element  separline">
-        <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
-          <div class="time-line-date-content">
-            <p class="mbr-timeline-date mbr-fonts-style display-5">
-              2 february 2019
-            </p>
-          </div>
-        </div>
-        <span class="iconBackground"></span>
-        <div class="col-xs-12 col-md-6 align-left ">
-          <div class="timeline-text-content">
-            <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">First date</h4>
-            <p class="mbr-timeline-text mbr-fonts-style display-7">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat libero, bibendum in libero tempor, luctus volutpat ligula.
-              Integer fringilla porttitor pretium. Nam erat felis, iaculis id justo ut, ullamcorper feugiat elit. Proin vel
-              lectus auctor, porttitor ligula vitae, convallis leo. In eget massa elit.
-            </p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="row timeline-element reverse separline">
-        <div class="timeline-date-panel col-xs-12 col-md-6  align-left">
-          <div class="time-line-date-content">
-            <p class="mbr-timeline-date mbr-fonts-style display-5">
-              3 march 2020
-            </p>
-          </div>
-        </div>
-        <span class="iconBackground"></span>
-        <div class="col-xs-12 col-md-6 align-right">
-          <div class="timeline-text-content">
-            <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-              Proposal</h4>
-            <p class="mbr-timeline-text mbr-fonts-style display-7">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat libero, bibendum in libero tempor, luctus volutpat ligula.
-              Integer fringilla porttitor pretium. Nam erat felis, iaculis id justo ut, ullamcorper feugiat elit. Proin vel
-              lectus auctor, porttitor ligula vitae, convallis leo. In eget massa elit.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div class="row timeline-element ">
-        <div class="timeline-date-panel col-xs-12 col-md-6 align-right">
-          <div class="time-line-date-content">
-            <p class="mbr-timeline-date mbr-fonts-style display-5">
-              4 april 2021
-            </p>
-          </div>
-        </div>
-        <span class="iconBackground"></span>
-        <div class="col-xs-12 col-md-6 align-left ">
-          <div class="timeline-text-content">
-            <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5">
-              Engagement</h4>
-            <p class="mbr-timeline-text mbr-fonts-style display-7">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam erat libero, bibendum in libero tempor, luctus volutpat ligula.
-              Integer fringilla porttitor pretium. Nam erat felis, iaculis id justo ut, ullamcorper feugiat elit. Proin vel
-              lectus auctor, porttitor ligula vitae, convallis leo. In eget massa elit.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section class="header1 cid-qwU0Se3wgU mbr-parallax-background" id="header1-c" data-rv-view="1142">
   <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(70, 80, 82);">
   </div>

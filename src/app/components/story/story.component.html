@@ -1,0 +1,28 @@
+<section class="timeline1 cid-qwTIrrJuXL" id="story" data-rv-view="1139">
+    <div class="container align-center">
+        <h2 class="mbr-section-title pb-3 mbr-fonts-style display-1">
+            Nuestra historia</h2>
+        <!-- <h3 class="mbr-section-subtitle pb-5 mbr-fonts-style display-2">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        </h3> -->
+        <div class="container timelines-container" mbri-timelines="">
+            <div *ngFor="let event of events; let last = last; let even = even; let odd = odd" 
+            [ngClass]="{ 'reverse': odd, '': even, 'separline': !last }" class="row timeline-element">
+                <div [ngClass]="{ 'align-left': odd, 'align-right': even }" class="timeline-date-panel col-xs-12 col-md-6">
+                    <div class="time-line-date-content ">
+                        <p class="mbr-timeline-date mbr-fonts-style display-5 " [innerHTML]="event.date">   
+                        </p>
+                    </div>
+                </div>
+                <span class="iconBackground "></span>
+                <div [ngClass]="{ 'align-right': odd, 'align-left': even }" class="col-xs-12 col-md-6">
+                    <div class="timeline-text-content ">
+                        <h4 class="mbr-timeline-title pb-3 mbr-fonts-style display-5 " [innerHTML]="event.description.title"></h4>
+                        <p class="mbr-timeline-text mbr-fonts-style display-7 " [innerHTML]="event.description.body">
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

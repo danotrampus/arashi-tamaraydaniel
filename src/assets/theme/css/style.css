@@ -424,3 +424,7 @@ nav .mbr-section-btn {
 	top: 0;
 	left: -2400px;
 }
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-size: 40px !important;
+}

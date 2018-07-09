@@ -14,6 +14,9 @@ import { CopyrightComponent } from './components/copyright/copyright.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { WedshootsComponent } from './components/wedshoots/webshoots.component';
+import { StoryComponent } from './components/story/story.component';
+import { GiftComponent } from './components/gift/gift.component';
+import { SlideComponent } from './components/slide/slide.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { WedshootsComponent } from './components/wedshoots/webshoots.component';
     CopyrightComponent,
     MenuComponent,
     BannerComponent,
-    WedshootsComponent
+    WedshootsComponent,
+    StoryComponent,
+    GiftComponent,
+    SlideComponent
   ],
   imports: [
     BrowserModule,
