@@ -1,4 +1,6 @@
 import { Component, ViewEncapsulation, Input } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-invited',
@@ -7,4 +9,10 @@ import { Component, ViewEncapsulation, Input } from '@angular/core';
 })
 export class InvitedComponent {
   @Input('contactId') contactId: string;
+  public isMobile: boolean;
+
+  constructor(public deviceService: DeviceDetectorService) {
+    this.isMobile = this.deviceService.isMobile();
+  }
+
 }

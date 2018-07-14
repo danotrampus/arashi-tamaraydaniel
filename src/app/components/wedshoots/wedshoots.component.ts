@@ -1,7 +1,7 @@
 import { Component, ViewEncapsulation, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-webshoots',
+  selector: 'app-wedshoots',
   templateUrl: './wedshoots.component.html',
   encapsulation: ViewEncapsulation.None
 })

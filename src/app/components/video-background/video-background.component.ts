@@ -1,5 +1,4 @@
 import { Component, ViewEncapsulation, Input, OnInit, AfterViewInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
 declare let $: any;
 
 @Component({
@@ -12,7 +11,7 @@ export class VideoBackgroundComponent implements OnInit, AfterViewInit {
   @Input('youtubeVideoId') youtubeVideoId: string;
   private player: any;
 
-  constructor(private domSanitizer: DomSanitizer) { }
+  constructor() { }
 
   ngOnInit() {
   }
@@ -27,15 +26,19 @@ export class VideoBackgroundComponent implements OnInit, AfterViewInit {
 
   initVideo() {
     (<any>window).onYouTubeIframeAPIReady = () => {
-      console.log('Youtube ready');
+      // alert('Youtube ready');
       this.player = new (<any>window).YT.Player('tv', {
         height: '100%',
         width: '100%',
         events: {
           'onReady': () => {
-            console.log('Youtube ok');
-            this.player.loadVideoById({ 'videoId': this.youtubeVideoId });
-            this.player.mute();
+            // alert('Youtube ok');
+            try {
+              this.player.loadVideoById({ 'videoId': this.youtubeVideoId });
+              this.player.mute();
+            } catch (error) {
+              alert(error);
+            }
           },
           'onStateChange': (e) => {
             if (e.data === 1) {
@@ -105,8 +108,8 @@ export class VideoBackgroundComponent implements OnInit, AfterViewInit {
 
     $(window).on('load resize', () => {
       if (this.player) {
-        const w = $(window).width() + 200,
-          h = $(window).height() + 200,
+        const w = $(window).width() + 300,
+          h = $(window).height() + 300,
           offset = 300;
         if (w / h > 16 / 9) {
           this.player.setSize(w, h);

@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+.mbr-figure {
+    min-height: 270px;
+}
+
+#gift {
+    padding-top: 90px;
+    padding-bottom: 90px;
+    margin-top: 90px;
+}
+
+.countdown .number-wrap {
+    font-size: 3rem;
+    line-height: 3rem;
+}
+
+#wedshoots {
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.display-1, .display-2, .display-3, .display-4, .display-5 {
+    font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+#wedshoots .social-list {
+    font-size: 3rem;
+    padding-top: 50px;
+}
+
+#wedshoots .social-list a {
+    color: black;
+}

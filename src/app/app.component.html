@@ -1,13 +1,68 @@
 <app-menu [homeOption]="{text: 'Tamara y Daniel', link:'#video-background'}" [menuOptions]="[
+  {text: 'Donde', link:'#location'},
+  {text: 'Regalo', link:'#gift'},
+  {text: 'Confirmar asistencia', link:'#confirm'},
   {text: 'Novio', link:'#groom'},  
   {text: 'Novia', link:'#bride'},
-  {text: 'Fotos', link:'#slide'},
   {text: 'Historia', link:'#story'},
-  {text: 'Cuando', link:'#countdown'},
-  {text: 'Donde', link:'#location'},
-  {text: 'Regalo', link:'#gift'}
+  {text: 'Fotos', link:'#slide'}
 ]"></app-menu>
-<app-video-background [youtubeVideoId]="'l8DMfBr_DMI'"></app-video-background>
+<app-video-background [youtubeVideoId]="'l8DMfBr_DMI'">
+  <video-background-description>
+    <app-countdown [dueDate]="'2018-10-26 00:00'" [timezone]="'America/Argentina/Buenos_Aires'"></app-countdown>
+  </video-background-description>
+</app-video-background>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <app-location>
+        <location-title>Ceremonia</location-title>
+        <location-subtitle>Parroquia San Roque</location-subtitle>
+        <location-description>
+          La ceremonia se celebrará a las 21:00hs en la Parroquia San Roque que se encuentra ubicada en ubicada en Plaza 1160, Villa
+          Ortuzar.
+        </location-description>
+        <location-image>
+          <img src="assets/images/church.jpg" alt="iglesia" title="iglesia">
+        </location-image>
+      </app-location>
+      <app-map>
+        <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJP0t0RcGtXF2uHDwZFUBlb_s2gOPPF2A&q=place_id:ChIJZ_L9lHS2vJURA7eNMbbyo9M"
+          allowfullscreen=""></iframe>
+      </app-map>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <app-location>
+        <location-title>Fiesta</location-title>
+        <location-subtitle>Darwin Multiespacio</location-subtitle>
+        <location-description>
+          ¡Después de la ceremonia se viene la fiesta! Te esperamos en el salón Darwin San Isidro Espacio I ubicado dentro del Hipódromo.
+        </location-description>
+        <location-image>
+          <img src="assets/images/salon.jpg" alt="salon" title="salon">
+        </location-image>
+      </app-location>
+      <app-map>
+        <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJP0t0RcGtXF2uHDwZFUBlb_s2gOPPF2A&q=v+Bernabe+Marquez+702+San+Isidro+Argentina"
+          allowfullscreen=""></iframe>
+      </app-map>
+    </div>
+  </div>
+</div>
+<app-gift>
+  <gift-title>¿Querés hacernos un regalo?</gift-title>
+  <gift-description>
+    Tu presencia es sin duda nuestro mayor regalo. Pero si queres obsequiarnos algo puedes ayudarnos con nuestro luna de miel.</gift-description>
+  <gift-description-hidden>
+    Cuenta Nº: 000000050200496043 - Banco Ciudad
+    <br/> CBU Nº: 029000560000004960439
+    <br/> Alias: JMP3692607ARS
+    <br/> CUIT: 20-35322456-6
+    <br/> Titular: Daniel Trampuss
+  </gift-description-hidden>
+  <gift-button-show>Ver datos bancarios</gift-button-show>
+  <gift-button-hide>Ocultar datos bancarios</gift-button-hide>
+</app-gift>
 <app-invited [contactId]="'form1-j'"></app-invited>
 <app-groom>
   <groom-img>
@@ -40,202 +95,25 @@
     rusa de experiencias con las que nunca te podrías aburrir.
   </bride-description>
 </app-bride>
-<app-slide></app-slide>
 <app-story [events]="[
   { date: '2009', css: 'reverse separline', description: { title: 'Nos conocimos en la facultad', body: '<i class=\'flaticon-006-wedding-contract\'></i>'} },
   { date: '3 de Diciembre 2009', css: 'reverse separline', description: { title: 'Nos pusimos de novios', body: '(Sin saber en que nos metiamos) <br/><i class=\'flaticon-030-relationship\'></i>'} },
   { date: '21 de Diciembre 2015', css: 'separline', description: { title: 'Nos recibimos', body: 'Siempre juntos y esta no fue la excepción. <br/><i class=\'flaticon-015-wedding-1\'></i>'} },
-  { date: '6 de Diciembre 2017', css: 'reverse separline', description: { title: 'Propuesta <i class=\'flaticon-016-proposal-1\'></i>', body: 'Después de años compartidos en los que hemos sido muy felices hemos decidido que nos casamos!!! <br/><i class=\'flaticon-050-wedding-ring\'></i>'} },
+  { date: '6 de Diciembre 2017', css: 'reverse separline', description: { title: 'Propuesta <i class=\'flaticon-016-proposal-1\'></i>', body: 'Después de años compartidos en los que hemos sido muy felices decidimos que nos casamos!!! <br/><i class=\'flaticon-050-wedding-ring\'></i>'} },
   { date: '26 de Octubre 2018', css: 'separline', description: { title: 'Nos casamos y festejamos', body: 'Nos casamos en la parroquia San Roque <br><i class=\'flaticon-041-church\'></i><br> y lo festejamos en Darwin San Isidro.<br/><i class=\'flaticon-026-champagne\'></i>'} }
 ]">
 </app-story>
-<app-countdown [dueDate]="'2018-10-26 00:00'" [timezone]="'America/Argentina/Buenos_Aires'"></app-countdown>
-<app-location>
-  <location-title>Iglesia</location-title>
-  <location-subtitle>Parroquia San Roque</location-subtitle>
-  <location-description>
-    La ceremonia se celebrará a las 21:00hs del día Viernes 26 de Octubre. La iglesia se encuentra ubicada en ubicada en Plaza
-    1160, Villa Ortuzar.
-  </location-description>
-  <location-image>
-    <img src="assets/images/church.jpg" alt="iglesia" title="iglesia">
-  </location-image>
-</app-location>
-<app-map>
-  <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJP0t0RcGtXF2uHDwZFUBlb_s2gOPPF2A&q=place_id:ChIJZ_L9lHS2vJURA7eNMbbyo9M"
-    allowfullscreen=""></iframe>
-</app-map>
-<app-location>
-  <location-title>Salón</location-title>
-  <location-subtitle>Darwin Espacio I</location-subtitle>
-  <location-description>
-    El Hipódromo de San Isidro del Jockey Club es uno de los sitios más simbólicos de Buenos Aires. Inmerso dentro de un ambiente
-    selecto y tradicional, allí sobrevive una gran parte de la historia del país.
-    <br/> Los salones de Darwin Multiespacio ubicados, dentro del Hipódromo, frente a las pistas de carrera son arquitectónicamente
-    amplios y modernos, detalles que combinados con los grandes espacios cubiertos de flores y árboles que los rodean hacen
-    del lugar un sitio mágico.
-  </location-description>
-  <location-image>
-    <img src="assets/images/salon.jpg" alt="salon" title="salon">
-  </location-image>
-</app-location>
-<app-map>
-  <iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBJP0t0RcGtXF2uHDwZFUBlb_s2gOPPF2A&q=v+Bernabe+Marquez+702+San+Isidro+Argentina"
-    allowfullscreen=""></iframe>
-</app-map>
-<app-gift>
-  <gift-title>¿Querés hacernos un regalo?</gift-title>
-  <gift-description>
-    Tu presencia es sin duda nuestro mayor regalo. Pero si queres obsequiarnos algo puedes ayudarnos con nuestro luna de miel.</gift-description>
-  <gift-description-hidden>
-    Cuenta Nº: 101012093123811023109238 - Banco Ciudad
-    <br/> CBU Nº: 147141094194938409238439843
-    <br/> Alias: JMP13123123
-    <br/> CUIT: 20-35322456-6
-    <br/> Titular: Daniel Trampus
-  </gift-description-hidden>
-  <gift-button-show>Ver datos bancarios</gift-button-show>
-  <gift-button-hide>Ocultar datos bancarios</gift-button-hide>
-</app-gift>
+<app-slide [imagesNames]="[
+  'gallery-1.jpg',
+  'gallery-3.jpg',
+  'gallery-4.jpg',
+  'gallery-5.jpg',
+  'gallery-6.jpg',
+  'gallery-7.jpg',
+  'gallery-8.jpg',
+  'gallery-9.jpg',
+  'gallery-10.jpg'
+]"></app-slide>
+<app-wedshoots></app-wedshoots>
 <app-banner [bannerId]="1"></app-banner>
 <app-copyright></app-copyright>
-
-<!-- 
-<section class="header1 cid-qwU0Se3wgU mbr-parallax-background" id="header1-c" data-rv-view="1142">
-  <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(70, 80, 82);">
-  </div>
-
-  <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="mbr-white col-md-10">
-        <h1 class="mbr-section-title align-center mbr-bold pb-3 mbr-fonts-style display-1">
-          Now we're going to celebrate our wedding!</h1>
-        <h3 class="mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style display-7">Free Bootstrap Wedding Template</h3>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="clients cid-qwU6wRFbjk" id="clients-i" data-rv-view="1155">
-  <div class="container mb-5">
-    <div class="media-container-row">
-      <div class="col-12 align-center">
-        <h2 class="mbr-section-title pb-3 mbr-fonts-style display-1">Gift Registration</h2>
-        <h3 class="mbr-section-subtitle mbr-light mbr-fonts-style display-7">Quisque mollis rhoncus justo ut tincidunt.&nbsp;</h3>
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-    <div class="carousel slide" data-ride="carousel" role="listbox">
-      <div class="carousel-inner" data-visible="5">
-        <div class="carousel-item ">
-          <div class="media-container-row">
-            <div class="col-md-12">
-              <div class="wrap-img ">
-                <img src="assets/images/1.png" class="img-responsive clients-img" media-simple="true">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item ">
-          <div class="media-container-row">
-            <div class="col-md-12">
-              <div class="wrap-img ">
-                <img src="assets/images/2.png" class="img-responsive clients-img" media-simple="true">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item ">
-          <div class="media-container-row">
-            <div class="col-md-12">
-              <div class="wrap-img ">
-                <img src="assets/images/3.png" class="img-responsive clients-img" media-simple="true">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item ">
-          <div class="media-container-row">
-            <div class="col-md-12">
-              <div class="wrap-img ">
-                <img src="assets/images/4.png" class="img-responsive clients-img" media-simple="true">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="carousel-item ">
-          <div class="media-container-row">
-            <div class="col-md-12">
-              <div class="wrap-img ">
-                <img src="assets/images/5.png" class="img-responsive clients-img" media-simple="true">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-controls">
-        <a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev">
-          <span aria-hidden="true" class="mbri-left mbr-iconfont"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a data-app-prevent-settings="" class="carousel-control carousel-control-next" role="button" data-slide="next">
-          <span aria-hidden="true" class="mbri-right mbr-iconfont"></span>
-          <span class="sr-only">Next</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="mbr-section form1 cid-qwU8is89Fl" id="form1-j" data-rv-view="1169">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="title col-12 col-lg-8">
-        <h2 class="mbr-section-title align-center pb-3 mbr-fonts-style display-1">
-          Contact us!</h2>
-      </div>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="media-container-column col-lg-8" data-form-type="formoid">
-        <div data-form-alert="" hidden="">
-          Thanks for filling out the form!
-        </div>
-        <form class="mbr-form" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form">
-          <input type="hidden" data-form-email="true" value="Ib39DSjXc4/O2CZUXc4wpe3gVuGLgMbUFdEjEOc7vQi2RaFzRJsYkV93xAyLx3SHFCjZIixGMfT9Xn57Oq+TfLwEfkyjgiMnBGR3+tsMpawj6+TWMASOlg3KsN2zdIkX">
-          <div class="row row-sm-offset">
-            <div class="col-md-4 multi-horizontal" data-for="name">
-              <div class="form-group">
-                <label class="form-control-label mbr-fonts-style display-7" for="name-form1-j">Name</label>
-                <input type="text" class="form-control" name="name" data-form-field="Name" required="" id="name-form1-j">
-              </div>
-            </div>
-            <div class="col-md-4 multi-horizontal" data-for="email">
-              <div class="form-group">
-                <label class="form-control-label mbr-fonts-style display-7" for="email-form1-j">Email</label>
-                <input type="email" class="form-control" name="email" data-form-field="Email" required="" id="email-form1-j">
-              </div>
-            </div>
-            <div class="col-md-4 multi-horizontal" data-for="phone">
-              <div class="form-group">
-                <label class="form-control-label mbr-fonts-style display-7" for="phone-form1-j">Phone</label>
-                <input type="tel" class="form-control" name="phone" data-form-field="Phone" id="phone-form1-j">
-              </div>
-            </div>
-          </div>
-          <div class="form-group" data-for="message">
-            <label class="form-control-label mbr-fonts-style display-7" for="message-form1-j">Message</label>
-            <textarea type="text" class="form-control" name="message" rows="7" data-form-field="Message" id="message-form1-j"></textarea>
-          </div>
-
-          <span class="input-group-btn">
-            <button href="" type="submit" class="btn btn-form btn-black-outline display-4">SEND FORM</button>
-          </span>
-        </form>
-      </div>
-    </div>
-  </div>
-</section> -->

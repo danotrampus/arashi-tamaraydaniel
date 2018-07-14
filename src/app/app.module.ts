@@ -13,10 +13,12 @@ import { CountdownComponent } from './components/countdown/countdown.component';
 import { CopyrightComponent } from './components/copyright/copyright.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { BannerComponent } from './components/banner/banner.component';
-import { WedshootsComponent } from './components/wedshoots/webshoots.component';
+import { WedshootsComponent } from './components/wedshoots/wedshoots.component';
 import { StoryComponent } from './components/story/story.component';
 import { GiftComponent } from './components/gift/gift.component';
 import { SlideComponent } from './components/slide/slide.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DeviceDetectorModule } from 'ngx-device-detector';
 
 @NgModule({
   declarations: [
@@ -34,10 +36,13 @@ import { SlideComponent } from './components/slide/slide.component';
     WedshootsComponent,
     StoryComponent,
     GiftComponent,
-    SlideComponent
+    SlideComponent,
+    WedshootsComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    DeviceDetectorModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],

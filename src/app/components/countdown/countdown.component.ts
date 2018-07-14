@@ -23,41 +23,21 @@ export class CountdownComponent implements OnInit {
         this.dueDateText = dueDateMoment.format('LL');
         $('.countdown:not(.countdown-inited)').each(function () {
             $(this).addClass('countdown-inited').countdown(dueDateMoment.toDate(), function (event) {
-                const $days = $(event.target).closest('.countdown-cont').find('div.daysCountdown').attr('title');
-                const $hours = $(event.target).closest('.countdown-cont').find('div.hoursCountdown').attr('title');
-                const $minutes = $(event.target).closest('.countdown-cont').find('div.minutesCountdown').attr('title');
-                const $seconds = $(event.target).closest('.countdown-cont').find('div.secondsCountdown').attr('title');
                 $(this).html(
                     event.strftime([
                         '<div class="row">',
-                        '<div class="col-xs-4 col-sm-6 col-md-3">',
-                        '<span class="number-wrap">',
-                        '<span class="number display-2">%D</span>',
-                        '<span mbr-text class="period display-7">', $days, '</span>',
-                        '<span class="dot">:</span>',
-                        '</span>',
+                            '<div class="col-xs-12 col-sm-12">',
+                                '<span class="number-wrap">',
+                                    '<span class="text">FALTAN </span>',
+                                    '<span class="number">%D</span>',
+                                    '<span class="text"> DÍAS </span>',
+                                    '<span class="number">%H</span>',
+                                    '<span class="dot">:</span>',
+                                    '<span class="number">%M</span>',
+                                    '<span class="dot">:</span>',
+                                    '<span class="number">%S</span>',
+                                '</span>',
                         '</div>',
-                        '<div class="col-xs-4 col-sm-6 col-md-3">',
-                        '<span class="number-wrap">',
-                        '<span class="number display-2">%H</span>',
-                        '<span mbr-text class="period display-7">', $hours, '</span>',
-                        '<span class="dot">:</span>',
-                        '</span>',
-                        '</div>',
-                        '<div class="col-xs-4 col-sm-6 col-md-3">',
-                        '<span class="number-wrap">',
-                        '<span class="number display-2">%M</span>',
-                        '<span mbr-text class="period display-7">', $minutes, '</span>',
-                        '<span class="dot">:</span>',
-                        '</span>',
-                        '</div>',
-                        '<div class="col-xs-4 col-sm-6 col-md-3">',
-                        '<span class="number-wrap">',
-                        '<span class="number display-2">%S</span>',
-                        '<span mbr-text class="period display-7">', $seconds, '</span>',
-                        '</span>',
-                        '</div>',
-                        '</div>'
                     ].join(''))
                 );
             });
