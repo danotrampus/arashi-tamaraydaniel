@@ -4,20 +4,15 @@
             Galería de fotos</h2>
         <div class="content-slider-wrap">
             <div>
-                <div class="mbr-slider slide carousel" data-pause="true" data-keyboard="false" data-ride="false" data-interval="false">
+                <div class="slide carousel" data-pause="true" data-keyboard="false" data-ride="false" data-interval="false">
                     <ol class="carousel-indicators">
                         <ng-container *ngFor="let imageName of imagesNames; index as i; first as isFirst">
                             <li data-app-prevent-settings="" data-target="#slide" [ngClass]="{ 'active': isFirst }" data-slide-to="{{i}}"></li>
                         </ng-container>
                     </ol>
-                    <div class="carousel-inner" role="listbox" style=" width:100%; height: 500px !important;">
-                        <div *ngFor="let imageName of imagesNames; first as isFirst" [ngClass]="{ 'active': isFirst }" class="carousel-item slider-fullscreen-image"
-                            data-bg-video-slide="false">
-                            <div class="container container-slide">
-                                <div class="image_wrapper">
-                                    <img src="assets/images/{{imageName}}" style="width:75%;">
-                                </div>
-                            </div>
+                    <div class="carousel-inner" role="listbox">
+                        <div *ngFor="let imageName of imagesNames; first as isFirst" [ngClass]="{ 'active': isFirst }" class="carousel-item">
+                            <img src="assets/images/gallery/{{imageName}}">
                         </div>
                     </div>
                     <a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button" data-slide="prev" href="#slide">
